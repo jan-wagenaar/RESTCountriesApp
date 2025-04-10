@@ -1,38 +1,54 @@
-# sv
+# REST Countries API with Color Theme Switcher
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This is a solution to the [REST Countries API with Color Theme Switcher challenge](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca) on Frontend Mentor. This project allows users to browse country data fetched from the REST Countries API and includes a dark/light mode toggle for better user experience.
 
-## Creating a project
+## Table of Contents
 
-If you're seeing this, you've probably already done this step. Congrats!
+- [Overview](#overview)
+  - [Features](#features)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Running the Project](#running-the-project)
+- [Built With](#built-with)
+- [What I Learned](#what-i-learned)
+- [Continued Development](#continued-development)
+- [Acknowledgments](#acknowledgments)
 
-```bash
-# create a new project in the current directory
-npx sv create
+---
 
-# create a new project in my-app
-npx sv create my-app
-```
+## Overview
 
-## Developing
+### Features
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- View all countries from the REST Countries API.
+- Search for a country by its name.
+- Filter countries by region.
+- View detailed information about a selected country.
+- Toggle between light and dark themes.
 
-```bash
-npm run dev
+### Screenshot
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+![Screenshot of the project](./screenshot.png)
 
-## Building
+### Links
 
-To create a production version of your app:
+- [Live Site URL](#) <!-- Add your live site link here -->
+- [Frontend Mentor Challenge](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
 
-```bash
-npm run build
-```
+---
 
-You can preview the production build with `npm run preview`.
+## Getting Started
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/rest-countries-api.git
+   cd rest-countries-api
+
+## Built With
+
+- **SvelteKit**: A modern framework for building fast and scalable web applications.
+- **Vite**: For fast development and build tooling.
