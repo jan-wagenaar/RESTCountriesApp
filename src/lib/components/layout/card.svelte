@@ -6,7 +6,7 @@
 <Link href={href}>
   <article>
     <figure>
-      <img src={imageUrl} alt={href} />
+      <img src={imageUrl} alt={altText} />
     </figure>
     <section>
       {@render children?.()}
@@ -18,9 +18,10 @@
   article {
     display: flex;
     flex-direction: column;
-    border-radius: 0.5rem;
+    border-radius: var(--space-s);
     overflow: hidden;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 var(--space-xxs) var(--space-xs) rgba(0, 0, 0, 0.1);
+    max-width: 30rem;
   }
 
   figure {
@@ -37,7 +38,7 @@
   }
 
   section {
-    padding: 1rem;
+    padding: var(--space-m);
     background-color: #fff;
   }
 </style>

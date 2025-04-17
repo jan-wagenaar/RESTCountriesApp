@@ -1,7 +1,12 @@
 <script>
-  import Layout from "./+layout.svelte";
+  import Section from "$lib/components/layout/section.svelte";
+  import CountryList from "$lib/components/content/country-list.svelte";
+  import Search from "$lib/components/widgets/search.svelte";
 
-  import CountryList from "../components/content/country-list.svelte";
+  let searchTerm = $state('');
 </script>
 
-  <CountryList />
+<Section>
+<Search bind:searchTerm={searchTerm}/><span>{searchTerm}</span>
+</Section>
+<CountryList searchTerm={searchTerm}/>

@@ -1,7 +1,7 @@
 <script>
-  import Link from "../widgets/link.svelte";
+  import Link from '$lib/components/widgets/link.svelte'
   import DarkModeToggle from "./dark-mode-toggle.svelte";
-  import { APP_TITLE } from "../../lib/global";
+  import { APP_TITLE } from '$lib/global';
 </script>
 
 <header class="header">

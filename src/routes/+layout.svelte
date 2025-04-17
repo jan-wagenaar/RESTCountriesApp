@@ -1,6 +1,6 @@
 <script>
-  import Menu from "../components/layout/menu.svelte";
-   import { APP_TITLE } from "../lib/global";	
+  import Menu from "$lib/components/layout/menu.svelte";
+   import { APP_TITLE } from "$lib/global";	
 
   const { children } = $props()
 </script>
@@ -29,6 +29,24 @@
   :global(:root) {
     font-family: "Nunito Sans", sans-serif;
     --color-background-color: hsl(0, 0%, 98%);
+
+
+    --space-xxs: 0.125rem;
+    --space-xs: 0.25rem;
+    --space-s: 0.5rem; 
+    --space-base: 1rem;
+    --space-m: 2rem;
+    --space-l: 4rem;
+    --space-xl: 6rem;
+    --space-xxl: 8rem;
+
+    /* Add
+    - border 
+    - border-radius
+    - font sizings
+    - colors
+    
+    */
   }
 
   :global(body) {
@@ -45,13 +63,13 @@
 
   main {
     flex: 1;
-    padding: 1rem 5rem;
+    padding: var(--space-base) var(--space-xl);
   }
 
   footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 0.5rem;
+    padding: var(--space-s);
   }
 </style>
