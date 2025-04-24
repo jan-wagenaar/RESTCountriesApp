@@ -8,9 +8,7 @@
 </script>
 
 <div class="container">
-  <figure>
     <img src={data.flag} alt={`Flag of ${data.name}`} />
-  </figure>
   <section>
     <h1>{data.name}</h1>
     <article>
@@ -30,15 +28,16 @@
           ?.map((language: Language) => language.name)
           .join(", ")}
       </p>
+      <div class="list">
       {#if data.borders?.length}
-        {#each data.borders as border (border.code)}
-          <ButtonLink href={`/${border.code}`} class="border-button">
-            {border.name}
+        {#each data.borders as border}
+          <ButtonLink href={`/${border}`}>
+            {border}
           </ButtonLink>
         {/each}
-      {:else}
-        <p>No bordering countries</p>
       {/if}
+      </div>
+
     </article>
   </section>
 </div>
@@ -47,6 +46,11 @@
   .container {
     display: flex;
     gap: var(--space-xl);
+  }
+
+  img {
+    width: 50%;
+    height: auto;
   }
 
   section {
@@ -58,5 +62,11 @@
   article {
     display: flex;
     flex-flow: column wrap;
+  }
+
+  .list {
+    display: flex;
+    gap: var(--space-base);
+    flex-wrap: wrap;
   }
 </style>

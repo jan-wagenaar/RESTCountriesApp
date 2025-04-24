@@ -3,7 +3,8 @@
   const { children, imageUrl, altText, href } = $props();
 </script>
 
-<Link href={href}>
+<Link href={href} style="max-width: 30rem;">
+  <!-- TODO fix max width for single result -->
   <article>
     <figure>
       <img src={imageUrl} alt={altText} />
@@ -21,7 +22,6 @@
     border-radius: var(--space-s);
     overflow: hidden;
     box-shadow: 0 var(--space-xxs) var(--space-xs) rgba(0, 0, 0, 0.1);
-    max-width: 30rem;
   }
 
   figure {

@@ -1,5 +1,5 @@
 <script>
-  const { href, children } = $props();
+  const { href, style, children } = $props();
 </script>
 
 <a {href}>
