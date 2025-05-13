@@ -19,7 +19,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 2rem 3rem;
-    background-color: white;
+    background-color: var(--color-neutral-1);
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
     z-index: 99;
   }

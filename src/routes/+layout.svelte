@@ -30,8 +30,6 @@
   :global(:root) {
     font-family: "Nunito Sans", sans-serif;
     
-
-
     --space-xxs: 0.125rem;
     --space-xs: 0.25rem;
     --space-s: 0.5rem; 
@@ -41,12 +39,10 @@
     --space-xl: 4rem;
     --space-xxl: 6rem;
 
-    
+    --color-background-color: var(--color-neutral-1);
     --color-neutral-0: hsl(0, 0%, 100%);
     --color-neutral-1: hsl(0, 0%, 98%);
     --color-neutral-2: hsl(0, 0%, 52%);
-
-    --color-background-color: var(--color-neutral-1);
 
     --color-text-primary: #000;
 
@@ -64,6 +60,16 @@
     - colors
     
     */
+  }
+
+  :global(:root.dark-mode)  {
+    --color-background-color: hsl(210, 20%, 10%);
+    --color-text-primary: hsl(0, 0%, 100%);
+    --color-neutral-1: hsl(210, 20%, 15%);
+    --color-neutral-2: hsl(210, 20%, 30%);
+    --color-bg-toggle: hsl(210, 20%, 30%);
+    --color-bg-toggle-dark: hsl(210, 20%, 50%);
+    --color-bg-toggle-knob: hsl(0, 0%, 100%);
   }
 
   :global(body) {

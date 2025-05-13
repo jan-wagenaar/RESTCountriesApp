@@ -8,19 +8,22 @@
     function toggleDarkMode() {
         darkMode.update((current) => {
             const newMode = !current;
-            document.documentElement.classList.toggle('dark', newMode);
+            document.documentElement.classList.toggle('dark-mode', newMode);
             return newMode;
         });
     }
 </script>
 
-<div class="toggle" on:click={toggleDarkMode}>
-    <div class="switch"></div>
+<button class="toggle" on:click={toggleDarkMode}>
     <span>Toggle Dark Mode</span>
-</div>
+</button>
 
 <style>
     .toggle {
+        appearance: none;
+        border: none;
+        background: none;
+        color: var(--color-text-primary);
         display: flex;
         align-items: center;
         cursor: pointer;

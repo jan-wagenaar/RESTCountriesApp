@@ -39,6 +39,6 @@
 
   section {
     padding: var(--space-m);
-    background-color: #fff;
+    background-color: var(--color-neutral-1);
   }
 </style>
