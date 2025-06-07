@@ -21,7 +21,7 @@
 
 <div class="layout">
   <Menu />
-  <main class="main-content">
+  <main>
     {@render children?.()}
   </main>
 </div>
@@ -38,6 +38,7 @@
     --space-l: 2rem;
     --space-xl: 4rem;
     --space-xxl: 6rem;
+    --space-xxxl: 12rem;
 
     --color-background-color: var(--color-neutral-1);
     --color-neutral-0: hsl(0, 0%, 100%);

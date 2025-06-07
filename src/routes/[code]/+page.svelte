@@ -1,14 +1,14 @@
-<script lang="ts">
+<script>
   import ButtonLink from "$lib/components/widgets/button-link.svelte";
 
-  import type { PageProps } from "./$types";
-  import type { Country, Currency, Language, Border } from "$lib/types/country";
-
-  let { data }: PageProps = $props();
+  let { data } = $props();
 </script>
 
+<div>
+  <button>Back</button> <!-- TODO: This button should navigate back to the previous page -->
+</div>
 <div class="container">
-    <img src={data.flag} alt={`Flag of ${data.name}`} />
+  <img src={data.flag} alt={`Flag of ${data.name}`} />
   <section>
     <h1>{data.name}</h1>
     <article>
@@ -20,24 +20,21 @@
       <p>Top Level Domain: {data.topLevelDomain}</p>
       <p>
         Currencies: {data.currencies
-          ?.map((currency: Currency) => currency.name)
+          ?.map((currency) => currency.name)
           .join(", ")}
       </p>
       <p>
-        Languages: {data.languages
-          ?.map((language: Language) => language.name)
-          .join(", ")}
+        Languages: {data.languages?.map((language) => language.name).join(", ")}
       </p>
       <div class="list">
-      {#if data.borders?.length}
-        {#each data.borders as border}
-          <ButtonLink href={`/${border}`}>
-            {border}
-          </ButtonLink>
-        {/each}
-      {/if}
+        {#if data.borders?.length}
+          {#each data.borders as border}
+            <ButtonLink href={`/${border}`}>
+              {border}
+            </ButtonLink>
+          {/each}
+        {/if}
       </div>
-
     </article>
   </section>
 </div>
@@ -45,11 +42,13 @@
 <style>
   .container {
     display: flex;
-    gap: var(--space-xl);
+    justify-content: center;
+    gap: var(--space-xxxl);
   }
 
   img {
     width: 50%;
+    max-width: 800px;
     height: auto;
   }
 
@@ -57,6 +56,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-basis: 30%;
   }
 
   article {
@@ -68,5 +68,15 @@
     display: flex;
     gap: var(--space-base);
     flex-wrap: wrap;
+  }
+
+  @media (max-width: 900px) {
+    .container {
+      flex-direction: column;
+    }
+
+    img {
+      width: 100%;
+    }
   }
 </style>

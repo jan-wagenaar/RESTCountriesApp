@@ -8,5 +8,6 @@
 
 <Section>
 <Search bind:searchTerm={searchTerm}/>
+<!-- Add dropdown w/ filter -->
 </Section>
 <CountryList searchTerm={searchTerm}/>
