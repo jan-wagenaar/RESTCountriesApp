@@ -29,10 +29,10 @@
 <style>
   :global(:root) {
     font-family: "Nunito Sans", sans-serif;
-    
+
     --space-xxs: 0.125rem;
     --space-xs: 0.25rem;
-    --space-s: 0.5rem; 
+    --space-s: 0.5rem;
     --space-base: 1rem;
     --space-m: 1.5rem;
     --space-l: 2rem;
@@ -43,26 +43,23 @@
     --color-neutral-0: hsl(0, 0%, 100%);
     --color-neutral-1: hsl(0, 0%, 98%);
     --color-neutral-2: hsl(0, 0%, 52%);
+    --color-neutral-3: hsl(0, 0%, 40%);
 
+    --color-yellow: hsl(50, 100%, 50%);
     --color-text-primary: #000;
 
     --border-radius-base: 0.25rem;
-
     --box-shadow-base: 0 0 var(--space-s) hsla(0, 0%, 15%, 0.2);
+    --animation-base: all 0.4s ease-in-out;
 
-
-    
-
-    /* Add
-    - border 
-    - border-radius
-    - font sizings
-    - colors
-    
-    */
+    /* inputs */
+    --input-background: var(--color-neutral-1);
+    --focus-border-color: var(--color-neutral-3);
+    --focus-shadow-color: hsla(0, 0%, 0%, 0.2);
+    --placeholder-color: var(--color-neutral-2);
   }
 
-  :global(:root.dark-mode)  {
+  :global(:root.dark-mode) {
     --color-background-color: hsl(210, 20%, 10%);
     --color-text-primary: hsl(0, 0%, 100%);
     --color-neutral-1: hsl(210, 20%, 15%);

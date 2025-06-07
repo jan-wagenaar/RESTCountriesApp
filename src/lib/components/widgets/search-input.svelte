@@ -1,52 +1,50 @@
 <script>
+  import SearchIcon from "./search-icon.svelte";
   let { searchTerm = $bindable() } = $props();
 </script>
+
 <!-- TODO: make label the div box, add inline svg -->
-<div class="search-container">
+<label for="list-search" class="search-container">
+  <SearchIcon />
   <input
+    id="list-search"
     type="text"
     bind:value={searchTerm}
     placeholder="Search for a country..."
   />
-</div>
+</label>
 
 <style>
-
-    .search-container {
-        position: relative;
-    color: red; 
-    }
-
-
-  input {
+  .search-container {
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
     padding: var(--space-base);
-    padding-left: calc(1rem + var(--space-base) * 2); /* Adjusted for icon */
-    background-color: var(--color-neutral-1);
+    background-color: var(--input-background);
     border: var(--space-xxs) solid var(--color-neutral-2);
     color: var(--color-text-primary);
     border-radius: var(--space-xs);
     font-size: 1rem;
+  }
+
+  .search-container:focus-within,
+  .search-container:active {
+    border-color: var(--focus-border-color);
+    box-shadow: 0 0 0 var(--space-xs) var(--focus-shadow-color);
+  }
+
+  input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: inherit;
+    font-size: inherit;
     width: 100%;
   }
 
-  .search-container::before {
-    content: "";
-   
-    position: absolute;
-    left: 1rem; 
-    width: var(--space-m);
-    height: 100%;
-    color: var(--color-text-primary);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z' fill='none' stroke='currentColor' stroke-miterlimit='10' stroke-width='32'/%3E%3Cpath fill='none' stroke='currentColor' stroke-linecap='round' stroke-miterlimit='10' stroke-width='32' d='M338.29 338.29L448 448'/%3E%3C/svg%3E");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
-}
-
   input::placeholder {
-    color: #aaa;
+    color: var(--placeholder-color);
   }
 
   input:focus {
