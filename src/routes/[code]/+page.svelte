@@ -1,11 +1,13 @@
 <script>
-  import ButtonLink from "$lib/components/widgets/button-link.svelte";
+  import BackIcon from "$lib/assets/back-icon.svelte";
+import ButtonLink from "$lib/components/widgets/button-link.svelte";
+import InlineButtonLink from "$lib/components/widgets/inline-button-link.svelte";
 
   let { data } = $props();
 </script>
 
-<div>
-  <button>Back</button> <!-- TODO: This button should navigate back to the previous page -->
+<div class="margin-y-xl">
+  <ButtonLink href="./"><BackIcon /> Back</ButtonLink> <!-- TODO: This button should navigate back to the previous page -->
 </div>
 <div class="container">
   <img src={data.flag} alt={`Flag of ${data.name}`} />
@@ -26,12 +28,13 @@
       <p>
         Languages: {data.languages?.map((language) => language.name).join(", ")}
       </p>
+      <p>Border countries:</p>
       <div class="list">
         {#if data.borders?.length}
           {#each data.borders as border}
-            <ButtonLink href={`/${border}`}>
+            <InlineButtonLink href={`/${border}`}>
               {border}
-            </ButtonLink>
+            </InlineButtonLink>
           {/each}
         {/if}
       </div>
@@ -50,6 +53,7 @@
     width: 50%;
     max-width: 800px;
     height: auto;
+    object-fit: contain;
   }
 
   section {
@@ -68,6 +72,10 @@
     display: flex;
     gap: var(--space-base);
     flex-wrap: wrap;
+  }
+
+  .margin-y-xl {
+    margin: var(--space-xl) 0;
   }
 
   @media (max-width: 900px) {

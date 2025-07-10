@@ -63,6 +63,7 @@
   :global(:root.dark-mode) {
     --color-background-color: hsl(210, 20%, 10%);
     --color-text-primary: hsl(0, 0%, 100%);
+    --color-neutral-0: hsl(210, 20%, 15%);
     --color-neutral-1: hsl(210, 20%, 15%);
     --color-neutral-2: hsl(210, 20%, 30%);
     --color-bg-toggle: hsl(210, 20%, 30%);
