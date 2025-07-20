@@ -3,8 +3,6 @@ import data from '$lib/data.json';
 export function load({ url }) {
   const searchTerm = url.searchParams.get('searchTerm')?.toLowerCase() || '';
   const regionId = url.searchParams.get('regionId')?.toLowerCase() || '';
-  console.log('Search Term:', searchTerm);
-  console.log('Region ID:', regionId);
 
   let filteredCountries = data;
 
