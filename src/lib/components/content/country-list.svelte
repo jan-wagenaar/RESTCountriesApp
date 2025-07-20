@@ -1,5 +1,5 @@
 <script>
-  let countries = $props();
+  let { countries } = $props();
   import Grid from "../layout/grid.svelte";
   import CountryCard from "./country-card.svelte";
 </script>

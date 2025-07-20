@@ -1,8 +1,10 @@
 <script lang="ts">
   import type { Option, OptionId } from "$lib/types/option";
+  import { setUrlParamDebounced } from "$lib/logic/setUrlParamDebounced";
+  import { page } from "$app/state";
   let {
     options = [] as Option[],
-    selectedId = $bindable() as OptionId | null,
+    selectedId = '' as OptionId | null,
     label = "",
     name = "",
     disabled = false,
@@ -19,13 +21,16 @@
     {disabled}
     onfocus={() => (isOpen = true)}
     onblur={() => (isOpen = false)}
-    onchange={() => (isOpen = false)}
+    onchange={() => {
+      isOpen = false;
+      setUrlParamDebounced("regionId", selectedId);
+    }}
   >
-  {#if label}
-    <option value="" selected >
-      {label ? label : "Select an option"}
-    </option>
-  {/if}
+    {#if label}
+      <option value="" selected>
+        {label ? label : "Select an option"}
+      </option>
+    {/if}
     {#each options as option}
       <option value={option.id}>
         {option.value}

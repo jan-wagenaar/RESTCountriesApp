@@ -1,6 +1,8 @@
 <script>
   import SearchIcon from "./search-icon.svelte";
-  let { searchTerm = $bindable() } = $props();
+  import { setUrlParamDebounced } from "$lib/logic/setUrlParamDebounced";
+  let { searchTerm } = $props();
+
 </script>
 
 <!-- TODO: make label the div box, add inline svg -->
@@ -11,6 +13,7 @@
     type="text"
     bind:value={searchTerm}
     placeholder="Search for a country..."
+    oninput={() => setUrlParamDebounced("searchTerm", searchTerm)}
   />
 </label>
 
